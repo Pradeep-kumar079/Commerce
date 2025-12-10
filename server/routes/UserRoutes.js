@@ -6,7 +6,7 @@ const {
   getOrders,
   getUserDetails,
   updateUserDetails,
-} = require('../controller/userController');
+} = require('../controller/UserController');
 
 // GET /api/user/   → return logged-in user details
 router.get('/', verifyToken, getUserDetails);
