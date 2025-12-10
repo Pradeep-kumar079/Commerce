@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import "./Account.css";
 import { useNavigate } from "react-router-dom";
 
-const BASE_IMAGE_URL = "http://localhost:5000";
+const BASE_IMAGE_URL = "https://commerce-vu1b.onrender.com";
 
 const Account = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Account = () => {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const res = await fetch("http://localhost:5000/api/user/", {
+        const res = await fetch("https://commerce-vu1b.onrender.com/api/user/", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -76,7 +76,7 @@ const Account = () => {
         return;
       }
 
-      const res = await fetch("http://localhost:5000/api/user/", {
+      const res = await fetch("https://commerce-vu1b.onrender.com/api/user/", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const fetchOrders = async () => {
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/user/orders", { // 🔥 FIX HERE
+    const response = await fetch("https://commerce-vu1b.onrender.com/api/user/orders", { // 🔥 FIX HERE
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -142,7 +142,7 @@ const fetchOrders = async () => {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/api/cart/", {
+      const response = await fetch("https://commerce-vu1b.onrender.com/api/cart/", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

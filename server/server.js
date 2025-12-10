@@ -17,7 +17,7 @@ const app = express();
 
 // ---------- CORS CONFIG ----------
 const allowedOrigins = [
-  "http://localhost:3000",              // local React dev
+  "https://commerce-cruv.vercel.app",              // local React dev
   "https://commerce-cruv.vercel.app",   // deployed frontend (no trailing slash)
 ];
 

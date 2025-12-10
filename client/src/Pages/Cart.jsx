@@ -5,7 +5,7 @@ import './Cart.css';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
 
-const BACKEND_URL = 'http://localhost:5000'; // backend base URL
+const BACKEND_URL = 'https://commerce-vu1b.onrender.com'; // backend base URL
 
 // helper to safely build image URL
 const getImageUrl = (path) => {

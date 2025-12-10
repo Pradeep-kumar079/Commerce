@@ -15,7 +15,7 @@ const ManageProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/admin/allproducts");
+      const response = await axios.get("https://commerce-vu1b.onrender.com/api/admin/allproducts");
       const grouped = response.data.reduce((acc, product) => {
         if (!acc[product.category]) acc[product.category] = [];
         acc[product.category].push(product);
@@ -119,7 +119,7 @@ const ManageProducts = () => {
                         product.images.map((img, idx) => (
                           <img
                             key={idx}
-                            src={`http://localhost:5000${img}`}
+                            src={`https://commerce-vu1b.onrender.com${img}`}
                             alt={product.name}
                             style={{ width: "50px", marginRight: "5px" }}
                           />

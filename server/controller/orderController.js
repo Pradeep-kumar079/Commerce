@@ -48,7 +48,7 @@ const createOrder = async (req, res) => {
       },
       order_meta: {
         return_url:
-          "http://localhost:3000/payment/success?order_id={order_id}",
+          "https://commerce-cruv.vercel.app/payment/success?order_id={order_id}",
       },
       order_note: "Order created from MERN E-commerce",
     };

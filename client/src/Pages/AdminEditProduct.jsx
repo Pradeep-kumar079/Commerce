@@ -12,7 +12,7 @@ const AdminEditProduct = () => {
   // Fetch product details
   const fetchProduct = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/admin/product/${id}`);
+      const response = await axios.get(`https://commerce-vu1b.onrender.com/api/admin/product/${id}`);
       setProduct(response.data);
       setLoading(false);
     } catch (error) {
@@ -29,7 +29,7 @@ const AdminEditProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/admin/modify-product/${product._id}`, product);
+      await axios.put(`https://commerce-vu1b.onrender.com/api/admin/modify-product/${product._id}`, product);
       alert("Product updated successfully");
       navigate("/manage-products");
     } catch (error) {

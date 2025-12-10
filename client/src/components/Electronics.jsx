@@ -6,7 +6,7 @@ import "./Electronic.css";
 const Electronics = () => {
   const [electronics, setElectronics] = useState([]);
   const [loading, setLoading] = useState(true);
-  const BASE_IMAGE_URL = "http://localhost:5000";
+  const BASE_IMAGE_URL = "https://commerce-vu1b.onrender.com";
 
   useEffect(() => {
     const fetchElectronics = async () => {

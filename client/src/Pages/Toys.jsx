@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 import "./Toys.css";
 
 const Toys = () => {
-  const BASE_IMAGE_URL = "http://localhost:5000";
+  const BASE_IMAGE_URL = "https://commerce-vu1b.onrender.com";
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
