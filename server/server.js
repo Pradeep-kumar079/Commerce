@@ -23,7 +23,7 @@ const allowedOrigins = [
 
 const corsOptions = {
   origin: function (origin, callback) {
-    // allow requests with no origin (like Postman, curl)
+    // allow requests with no origin (like Postman, curl, Render health checks)
     if (!origin) return callback(null, true);
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
@@ -35,13 +35,16 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-app.use(cors(corsOptions));
-// Handle preflight requests
-app.options('*', cors(corsOptions));
+app.use(cors(corsOptions)); // ✅ only middleware, no invalid '*' route
 
 // ---------- Middlewares ----------
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// (Optional) health check route for Render/browser
+app.get('/', (req, res) => {
+  res.send('API is running ✅');
+});
 
 // ---------- Database connection ----------
 mongoose
