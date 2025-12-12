@@ -10,7 +10,7 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('/api/auth/register', data);
+      const res = await axios.post('https://commerce-vu1b.onrender.com/api/auth/register', data);
       alert(res.data.msg);
       // If you want auto-login, uncomment:
       // localStorage.setItem('token', res.data.token);
